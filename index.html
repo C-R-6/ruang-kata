@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Ruang Kata : baca, tulis, berdiskusi, dan bertumbuh bersama cerita." name="description"/>
+  <title>
+   Ruang Kata : Literary Community
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+  <script defer="" src="script.js">
+  </script>
+ </head>
+ <body>
+  <div class="app-layout">
+   <aside class="sidebar">
+    <a class="brand" href="#beranda">
+     Ruang Kata
+     <span>
+      .
+     </span>
+    </a>
+    <p class="sidebar-caption">
+     YOUR LITERARY SPACE
+    </p>
+    <nav aria-label="Menu utama" class="side-nav">
+     <a class="nav-item active" href="#beranda">
+      <span>
+       ⌂
+      </span>
+      Beranda
+     </a>
+     <a class="nav-item" href="#jelajahi">
+      <span>
+       ▤
+      </span>
+      Jelajahi Cerita
+     </a>
+     <a class="nav-item" href="#studio" id="writerNavLink">
+      <span>
+       ✎
+      </span>
+      Tulis &amp; Koreksi
+     </a>
+     <a class="nav-item" href="#myWorksSection" id="writerWorksNav" hidden>
+      <span>▣</span>
+      Karyaku
+     </a>
+     <a class="nav-item" href="#forum">
+      <span>
+       ☷
+      </span>
+      Forum Penulis
+     </a>
+     <a class="nav-item" href="#lomba">
+      <span>✧</span>
+      Lomba Menulis
+     </a>
+     <a class="nav-item" href="#penerbit" id="publisherDirectoryNav">
+      <span>▤</span>
+      Penerbit
+     </a>
+     <a class="nav-item" href="#messages" id="messagesNavLink" hidden>
+      <span>✉</span>
+      Pesan <span class="unread-badge" id="messageUnreadBadge" hidden>0</span>
+     </a>
+     <a class="nav-item" href="#publisherPanel" id="publisherPanelNavLink" hidden>
+      <span>▣</span>
+      Panel Penerbit
+     </a>
+     <a class="nav-item" hidden="" href="#editorPanel" id="editorNavLink">
+      <span>
+       &checkmark;
+      </span>
+      Panel Editor
+     </a>
+     <a class="nav-item" hidden href="#editorAdminPage" id="editorAdminNavLink">
+      <span>⚙</span>
+      Admin Forum &amp; Lomba
+     </a>
+    </nav>
+    <div class="sidebar-block">
+     <p class="sidebar-caption">
+      KOMUNITAS
+     </p>
+     <button class="community-link" data-community-shortcut="philosophers" type="button">
+      ◦ Philosophers Buddies
+     </button>
+     <button class="community-link" data-community-shortcut="writers" type="button">
+      ◦ Writers' Corner
+     </button>
+     <button class="community-link" data-community-shortcut="fantasy" type="button">
+      ◦ Fantasy Forge
+     </button>
+     <button class="community-link" data-community-shortcut="romance" type="button">
+      ◦ Romansa &amp; Rasa
+     </button>
+    </div>
+    <div class="sidebar-bottom">
+     <p class="sidebar-tip">
+      &ldquo;Setiap cerita punya dunia. Setiap penulis punya suara.&rdquo;
+     </p>
+     <div class="sidebar-user">
+      <span class="avatar" id="userAvatar">
+       RK
+      </span>
+      <span>
+       <strong id="sidebarUserName">
+        Pembaca
+       </strong>
+       <small id="sidebarUserRole">
+        Tamu Ruang Kata
+       </small>
+      </span>
+     </div>
+     <button class="profile-edit-link" id="editProfileButton" type="button" hidden>Ubah nama dan foto profil</button>
+     <button class="sidebar-login" id="loginButton" type="button">
+      Masuk / Daftar
+     </button>
+    </div>
+   </aside>
+   <div class="app-main">
+    <header class="topbar">
+     <button aria-label="Buka navigasi" class="mobile-menu" id="mobileMenu" type="button">
+      ☰
+     </button>
+     <div class="topbar-title">
+      <span class="eyebrow">
+       SELAMAT DATANG DI RUANG KATA
+      </span>
+      <strong>
+       Temukan cerita berikutnya.
+      </strong>
+     </div>
+     <label class="top-search">
+      <span>
+       &telrec;
+      </span>
+      <input aria-label="Cari novel" id="globalSearch" placeholder="Cari novel atau penulis..." type="search"/>
+     </label>
+     <div class="topbar-actions">
+      <span class="session-info" hidden="" id="sessionInfo">
+      </span>
+      <button class="button button-small" id="topLoginButton" type="button">
+       Masuk
+      </button>
+     </div>
+    </header>
+    <div class="content-grid">
+     <main class="main-column" id="mainContent">
+      <section class="welcome-banner" id="beranda">
+       <div class="welcome-copy">
+        <p class="eyebrow">
+         READ &middot; WRITE &middot; CONNECT
+        </p>
+        <h1>
+         Temukan Cerita,
+         <br/>
+         <em>
+          Temukan Dunia.
+         </em>
+        </h1>
+        <p>
+         Rumah bagi cerita yang ingin dibagikan, ide yang ingin diperdebatkan, dan penulis yang ingin berkembang.
+        </p>
+        <div class="welcome-actions">
+         <a class="button" href="#jelajahi">
+          Jelajahi Cerita
+          <span>
+           &rarr;
+          </span>
+         </a>
+         <a class="button button-light" href="#studio" id="heroWriteLink">
+          Mulai Menulis
+         </a>
+        </div>
+       </div>
+       <div aria-hidden="true" class="welcome-art">
+        <div class="art-sun">
+        </div>
+        <div class="art-book art-book-back">
+        </div>
+        <div class="art-book art-book-front">
+         <span>
+          RUANG
+          <br/>
+          KATA
+         </span>
+        </div>
+        <span class="art-star star-one">
+         ✦
+        </span>
+        <span class="art-star star-two">
+         ✧
+        </span>
+       </div>
+      </section>
+      <section class="page-section" id="pilihan">
+       <div class="section-heading">
+        <div>
+         <p class="eyebrow">
+          DIPILIH UNTUKMU
+         </p>
+         <h2>
+          Novel Pilihan
+         </h2>
+         <p class="muted">
+          Mulai dari satu bab. Siapa tahu kamu menemukan dunia baru.
+         </p>
+        </div>
+        <a class="inline-link" href="#jelajahi">
+         Jelajahi semua &rarr;
+        </a>
+       </div>
+       <div class="featured-grid" id="featuredNovels">
+       </div>
+      </section>
+      <section class="page-section" id="jelajahi">
+       <div class="section-heading">
+        <div>
+         <p class="eyebrow">
+          KATALOG CERITA
+         </p>
+         <h2>
+          Jelajahi Ruang Kata
+         </h2>
+         <p class="muted">
+          Sampul memanjang, cerita beragam, dan selalu ada bacaan baru.
+         </p>
+        </div>
+       </div>
+       <label class="catalog-search">
+        <span>
+         &telrec;
+        </span>
+        <input aria-label="Cari novel" id="searchInput" placeholder="Cari judul, penulis, atau genre..." type="search"/>
+       </label>
+       <div class="genre-filters" id="categoryFilters">
+        <button class="filter active" data-category="Semua" type="button">
+         Semua
+        </button>
+        <button class="filter" data-category="Romansa" type="button">
+         Romansa
+        </button>
+        <button class="filter" data-category="Fantasi" type="button">
+         Fantasi
+        </button>
+        <button class="filter" data-category="Misteri" type="button">
+         Misteri
+        </button>
+        <button class="filter" data-category="Drama" type="button">
+         Drama
+        </button>
+        <button class="filter" data-category="Petualangan" type="button">
+         Petualangan
+        </button>
+        <button class="filter" data-category="Fiksi ilmiah" type="button">
+         Fiksi ilmiah
+        </button>
+        <button class="filter" data-category="Horor" type="button">
+         Horor
+        </button>
+       </div>
+       <div class="masonry-grid" id="allNovels">
+       </div>
+       <p class="empty-state" hidden="" id="emptyState">
+        Belum ada cerita yang cocok dengan pencarianmu.
+       </p>
+      </section>
+      <section class="page-section" id="studio">
+       <div class="section-heading">
+        <div>
+         <p class="eyebrow">
+          WRITING STUDIO
+         </p>
+         <h2>
+          Tulis &amp; Koreksi
+         </h2>
+         <p class="muted">
+          Tempat naskah dirapikan sebelum menghadap pembaca dan editor.
+         </p>
+        </div>
+       </div>
+       <div class="access-prompt" id="writerAccessPrompt">
+        <div class="prompt-symbol">
+         ✎
+        </div>
+        <h3>
+         Ruang kreatormu menunggu
+        </h3>
+        <p>
+         Masuk sebagai penulis untuk membuat bab, merapikan naskah, menyimpan draf, dan mengirim karya ke editor.
+        </p>
+        <button class="button" id="openWriterLogin" type="button">
+         Masuk sebagai Penulis
+        </button>
+       </div>
+       <div hidden="" id="writerWorkspace">
+        <form class="writer-form" id="novelForm">
+         <div class="form-section-title">
+          <div>
+           <p class="eyebrow">
+            01 / DETAIL KARYA
+           </p>
+           <h3>
+            Informasi Novel
+           </h3>
+          </div>
+          <span class="soft-tag">
+           Writing studio
+          </span>
+         </div>
+         <div class="form-grid">
+          <div class="field field-wide">
+           <label for="novelTitle">
+            Judul novel
+           </label>
+           <input id="novelTitle" maxlength="100" placeholder="Contoh: Senja di Padang yang Tandus" required=""/>
+          </div>
+          <div class="field">
+           <label for="novelGenre">
+            Genre
+           </label>
+           <select id="novelGenre">
+            <option>
+             Romansa
+            </option>
+            <option>
+             Fantasi
+            </option>
+            <option>
+             Misteri
+            </option>
+            <option>
+             Drama
+            </option>
+            <option>
+             Petualangan
+            </option>
+            <option>
+             Fiksi ilmiah
+            </option>
+            <option>
+             Horor
+            </option>
+           </select>
+          </div>
+          <div class="field">
+           <label for="penName">
+            Nama pena
+           </label>
+           <input id="penName" maxlength="60" placeholder="Nama penulis" required=""/>
+          </div>
+          <div class="field field-wide">
+           <label for="novelSynopsis">
+            Sinopsis lengkap
+           </label>
+           <textarea id="novelSynopsis" maxlength="20000" placeholder="Ceritakan latar, tokoh, konflik, dan arah cerita..." required="" rows="7"></textarea>
+           <small class="field-help">Kolom ini bisa menampung 1.000 kata atau lebih, sampai 20.000 karakter. Teks lengkap ditampilkan di halaman baca tanpa dipotong.</small>
+          </div>
+          <div class="field field-wide">
+           <label for="coverFileInput">Unggah sampul dari perangkat (opsional)</label>
+           <input id="coverFileInput" type="file" accept="image/png,image/jpeg,image/webp" />
+           <small class="field-help">Pilih JPG, PNG, atau WebP, maksimal 8 MB. Gambar akan diperkecil untuk prototipe lokal.</small>
+           <label for="coverUrl">Atau gunakan tautan sampul</label>
+           <input id="coverUrl" placeholder="Tautan gambar publik (opsional)" type="url"/>
+           <small class="field-help">Untuk Google Drive, berikan akses Viewer kepada siapa saja yang memiliki tautan. Tautan Drive terkadang tidak dapat ditampilkan langsung; unggah file dari perangkat lebih andal.</small>
+           <div class="cover-preview-wrap">
+            <img alt="Pratinjau sampul" hidden="" id="coverPreview"/>
+            <span id="coverPreviewMessage">Pratinjau sampul akan tampil di sini.</span>
+           </div>
+          </div>
+         </div>
+         <div class="form-section-title editor-title-row">
+          <div>
+           <p class="eyebrow">
+            02 / RUANG MENULIS
+           </p>
+           <h3>
+            Editor Naskah
+           </h3>
+           <p class="muted small">
+            Gunakan toolbar seperti pengolah kata. Pemeriksaan bahasa di bawah adalah bantuan dasar, bukan pemeriksa tata bahasa setingkat Microsoft Word.
+           </p>
+          </div>
+         </div>
+         <div class="chapter-bar">
+          <label for="writerChapterSelect">
+           Bab yang sedang diedit
+          </label>
+          <select id="writerChapterSelect">
+          </select>
+          <button class="button button-outline button-small" id="addChapterButton" type="button">
+           ＋ Tambah Bab
+          </button>
+          <button class="text-button danger-text" id="removeChapterButton" type="button">
+           Hapus bab
+          </button>
+         </div>
+         <div class="field">
+          <label for="chapterTitleInput">
+           Judul bab
+          </label>
+          <input id="chapterTitleInput" maxlength="120" placeholder="Contoh: Debu di Ambang Pintu" required=""/>
+         </div>
+         <div aria-label="Pemformatan naskah" class="editor-toolbar" role="toolbar">
+          <button data-command="bold" title="Tebal" type="button">
+           <strong>
+            B
+           </strong>
+          </button>
+          <button data-command="italic" title="Miring" type="button">
+           <em>
+            I
+           </em>
+          </button>
+          <button data-command="underline" title="Garis bawah" type="button">
+           <u>
+            U
+           </u>
+          </button>
+          <span class="toolbar-divider">
+          </span>
+          <button data-command="insertUnorderedList" title="Daftar berpoin" type="button">
+           &bull; Daftar
+          </button>
+          <button data-command="undo" title="Urungkan" type="button">
+           &curvearrowleft;
+          </button>
+          <button data-command="redo" title="Ulangi" type="button">
+           &curvearrowright;
+          </button>
+          <button id="insertChapterImageButton" type="button" title="Sisipkan gambar di posisi kursor">＋ Gambar</button>
+          <input id="chapterImageInput" type="file" accept="image/png,image/jpeg,image/webp" hidden />
+          <span class="toolbar-spacer">
+          </span>
+          <span class="word-count" id="wordCount">
+           0 kata
+          </span>
+         </div>
+         <div aria-label="Isi naskah" aria-multiline="true" class="chapter-editor" contenteditable="true" data-placeholder="Mulai menulis di sini. Pisahkan paragraf dengan menekan Enter dua kali..." id="chapterEditor" lang="id" role="textbox" spellcheck="true">
+         </div>
+         <div class="proofread-panel">
+          <div class="proofread-heading">
+           <div>
+            <p class="eyebrow">
+             03 / BANTUAN BAHASA
+            </p>
+            <h4>
+             Periksa naskah
+            </h4>
+           </div>
+           <span class="soft-tag">
+            Beta
+           </span>
+          </div>
+          <p class="muted small">
+           Menampilkan lokasi, kutipan, alasan, dan saran untuk pola ejaan/tanda baca yang dikenali. Kata baku dapat diperiksa lewat KBBI VI Daring; aturan tanda baca mengacu pada EYD. Ini bukan pengganti pemeriksa bahasa lengkap atau keputusan penyunting.
+          </p>
+          <div class="proofread-actions">
+           <button class="button button-outline button-small" id="checkWritingButton" type="button">
+            Periksa naskah
+           </button>
+           <button class="button button-outline button-small" id="quickFixButton" type="button">
+            Rapikan spasi &amp; tanda baca
+           </button>
+          </div>
+          <p class="field-help">Rujukan: <a href="https://kbbi.kemendikdasmen.go.id/" target="_blank" rel="noopener noreferrer">KBBI VI Daring</a> untuk kata baku dan <a href="https://ejaan.kemendikdasmen.go.id/" target="_blank" rel="noopener noreferrer">pedoman EYD</a> untuk ejaan/tanda baca. Daftar pola lokal di sini terbatas.</p>
+          <div aria-live="polite" class="proofreading-results" id="proofreadingResults">
+           <p class="muted small">
+            Hasil pemeriksaan akan muncul di sini.
+           </p>
+          </div>
+         </div>
+         <div class="writer-footer">
+          <span aria-live="polite" id="saveStatus">
+           Draf belum disimpan.
+          </span>
+          <div>
+           <button class="button button-outline" id="saveDraftButton" type="button">
+            Simpan Draf
+           </button>
+           <button class="button" id="submitNovelButton" type="submit">
+            Kirim ke Editor
+           </button>
+          </div>
+         </div>
+         <p class="field-help">
+          Simpan draf berkala. Naskah baru masuk katalog setelah disetujui editor.
+         </p>
+        </form>
+        <div class="my-work-panel" id="myWorksSection">
+         <div class="section-heading">
+          <div>
+           <p class="eyebrow">
+            WORKSPACE
+           </p>
+           <h3>
+            Karyaku
+           </h3>
+           <p class="muted small">Semua karya yang kamu simpan atau kirim ada di sini. Setelah editor menyetujui, karya juga muncul di Jelajahi Cerita.</p>
+          </div>
+          <span class="soft-tag" id="myNovelCount">
+           0 karya
+          </span>
+         </div>
+         <div class="my-novels-list" id="myNovelsList">
+          <p class="empty-state">
+           Belum ada karya.
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="page-section" id="forum">
+       <div class="section-heading">
+        <div>
+         <p class="eyebrow">
+          IDE BERTEMU IDE
+         </p>
+         <h2>
+          Forum Penulis
+         </h2>
+         <p class="muted">
+          Pilih ruang diskusi yang paling dekat dengan minatmu.
+         </p>
+        </div>
+        <button class="button button-small" id="newTopicButton" type="button">
+         ＋ Buat topik
+        </button>
+       </div>
+       <div class="community-grid" id="communityGrid">
+       </div>
+       <div class="forum-toolbar">
+        <div>
+         <h3 id="forumHeading">
+          Semua diskusi
+         </h3>
+         <p class="muted small" id="forumSubheading">
+          Pertukaran pikiran dimulai dari rasa ingin tahu.
+         </p>
+        </div>
+        <select aria-label="Filter komunitas" id="forumCommunityFilter">
+         <option value="all">
+          Semua komunitas
+         </option>
+         <option value="philosophers">
+          Philosophers Buddies
+         </option>
+         <option value="writers">
+          Writers' Corner
+         </option>
+         <option value="fantasy">
+          Fantasy Forge
+         </option>
+         <option value="romance">
+          Romansa &amp; Rasa
+         </option>
+        </select>
+       </div>
+       <div class="form-card" hidden="" id="topicFormWrap">
+        <form id="topicForm">
+         <h3>
+          Mulai diskusi baru
+         </h3>
+         <label for="topicCommunity">
+          Komunitas
+         </label>
+         <select id="topicCommunity">
+          <option value="philosophers">
+           Philosophers Buddies
+          </option>
+          <option value="writers">
+           Writers' Corner
+          </option>
+          <option value="fantasy">
+           Fantasy Forge
+          </option>
+          <option value="romance">
+           Romansa &amp; Rasa
+          </option>
+         </select>
+         <label for="topicTitle">
+          Judul topik
+         </label>
+         <input id="topicTitle" maxlength="110" placeholder="Apa yang ingin kamu diskusikan?" required=""/>
+         <label for="topicBody">
+          Isi diskusi
+         </label>
+         <textarea id="topicBody" maxlength="2500" placeholder="Ceritakan konteks atau pertanyaanmu..." required="" rows="4"></textarea>
+         <div id="topicImageField" class="image-field" hidden>
+          <label for="topicImageInput">Gambar topik / pengumuman (opsional)</label>
+          <input id="topicImageInput" type="file" accept="image/*">
+          <small class="field-help">Fitur lampiran untuk admin forum. Gambar akan diperkecil sebelum disimpan.</small>
+          <div class="image-preview-box"><img id="topicImagePreview" alt="Pratinjau gambar topik" hidden><span id="topicImagePreviewText">Belum ada gambar.</span></div>
+         </div>
+         <div class="form-actions">
+          <button class="button button-outline" id="cancelTopicButton" type="button">
+           Batal
+          </button>
+          <button class="button" type="submit">
+           Terbitkan topik
+          </button>
+         </div>
+        </form>
+       </div>
+       <div class="forum-topics" id="forumTopics">
+       </div>
+       <div class="topic-detail" hidden="" id="topicDetail">
+        <button class="text-button" id="backToTopics" type="button">
+         &larr; Kembali ke diskusi
+        </button>
+        <div id="topicDetailContent">
+        </div>
+        <div class="topic-replies" id="topicReplies">
+        </div>
+        <form class="reply-form" id="replyForm">
+         <label for="replyText">
+          Balas diskusi
+         </label>
+         <textarea id="replyText" maxlength="1200" placeholder="Tambahkan pemikiranmu..." required="" rows="3"></textarea>
+         <button class="button button-small" type="submit">
+          Kirim balasan
+         </button>
+        </form>
+       </div>
+      </section>
+      <section class="page-section" id="lomba">
+       <div class="section-heading">
+        <div>
+         <p class="eyebrow">
+          PANGGUNG KARYA
+         </p>
+         <h2>
+          Lomba Menulis
+         </h2>
+         <p class="muted">
+          Tantang dirimu menyelesaikan karya dan berbagi suara dengan pembaca baru.
+         </p>
+        </div>
+       </div>
+       <div class="contest-intro-actions">
+        <p class="muted small">Menemukan lomba di Instagram? Kirim usulan beserta tautan pengumumannya. Editor akan memeriksa sebelum lomba ditampilkan sebagai daftar resmi Ruang Kata.</p>
+        <button class="button button-outline button-small" type="button" id="suggestContestButton">＋ Usulkan lomba dari Instagram</button>
+       </div>
+       <div class="form-card" id="contestSuggestionWrap" hidden>
+        <form id="contestSuggestionForm">
+         <h3>Usulkan lomba dari Instagram</h3>
+         <p class="field-help">Masukkan tautan posting pengumuman yang bisa dibuka publik. Usulan tidak langsung tampil di daftar lomba.</p>
+         <label for="suggestionTitle">Nama lomba</label>
+         <input id="suggestionTitle" maxlength="120" required placeholder="Nama lomba menulis">
+         <label for="suggestionInstagram">Tautan posting Instagram</label>
+         <input id="suggestionInstagram" type="url" required placeholder="https://www.instagram.com/p/...">
+         <label for="suggestionDetails">Informasi / deskripsi lomba</label>
+         <textarea id="suggestionDetails" rows="4" maxlength="1600" required placeholder="Tema, tenggat, persyaratan, dan informasi yang kamu ketahui..."></textarea>
+         <label for="suggestionPosterInput">Poster lomba (opsional)</label>
+         <input id="suggestionPosterInput" type="file" accept="image/*">
+         <div class="image-preview-box"><img id="suggestionPosterPreview" alt="Pratinjau poster usulan" hidden><span id="suggestionPosterPreviewText">Belum ada poster.</span></div>
+         <div class="form-actions">
+          <button class="button button-outline" id="cancelSuggestionButton" type="button">Batal</button>
+          <button class="button" type="submit">Kirim usulan</button>
+         </div>
+        </form>
+       </div>
+       <div class="contest-grid" id="contestGrid">
+       </div>
+       <div class="my-contests">
+        <div class="section-heading">
+         <div>
+          <p class="eyebrow">
+           PARTISIPASIMU
+          </p>
+          <h3>
+           Lomba yang Kuikuti
+          </h3>
+         </div>
+        </div>
+        <div class="my-contest-entries" id="myContestEntries">
+         <p class="empty-state">
+          Belum ada pendaftaran lomba di browser ini.
+         </p>
+        </div>
+       </div>
+       <div class="form-card" hidden="" id="contestFormWrap">
+        <form id="contestForm">
+         <h3 id="contestFormHeading">
+          Ikuti lomba
+         </h3>
+         <p class="field-help" id="contestFormDescription">
+         </p>
+         <label for="contestPenName">
+          Nama pena
+         </label>
+         <input id="contestPenName" maxlength="60" placeholder="Nama penulis" required=""/>
+         <label for="contestWorkTitle">
+          Judul karya
+         </label>
+         <input id="contestWorkTitle" maxlength="120" placeholder="Judul naskah yang kamu ajukan" required=""/>
+         <label for="contestPitch">
+          Sinopsis singkat karya (opsional)
+         </label>
+         <textarea id="contestPitch" maxlength="1200" placeholder="Ringkasan singkat cerita (opsional)..." rows="3"></textarea>
+         <label for="contestManuscript">Naskah lengkap (wajib)</label>
+         <p class="field-help" id="contestManuscriptRule">Tempel atau ketik naskah lengkapmu di kolom ini.</p>
+         <textarea id="contestManuscript" class="contest-manuscript" placeholder="Tempel seluruh isi karya di sini. Panjang tulisan dihitung dalam kata, bukan karakter..." required rows="16"></textarea>
+         <div class="contest-word-counter" id="contestWordCounter" aria-live="polite">0 kata</div>
+         <p class="field-help">Pastikan naskah yang kamu kirim sesuai ketentuan lomba. Untuk prototipe ini, naskah akan dicatat di browser lokal dan belum dikirim ke penyelenggara.</p>
+         <div class="form-actions">
+          <button class="button button-outline" id="cancelContestButton" type="button">
+           Batal
+          </button>
+          <button class="button" type="submit">
+           Kirim pendaftaran demo
+          </button>
+         </div>
+        </form>
+       </div>
+      </section>
+      <section class="page-section editor-panel" hidden="" id="editorPanel">
+       <div class="section-heading">
+        <div>
+         <p class="eyebrow">
+          RUANG REDAKSI
+         </p>
+         <h2>
+          Antrean Editor
+         </h2>
+         <p class="muted">
+          Baca naskah, berikan catatan, dan putuskan status penerbitan.
+         </p>
+        </div>
+       </div>
+       <div class="editor-queue" id="editorQueue"></div>
+       <section class="editor-admin-gate" id="editorAdminGate" aria-live="polite"></section>
+       <section class="community-admin-panel" id="communityAdminPanel" hidden>
+        <div class="section-heading">
+         <div><p class="eyebrow">HAK ADMIN FORUM</p><h3>Kelola Forum &amp; Lomba</h3><p class="muted small">Unggah gambar topik, terbitkan lomba, periksa usulan Instagram, dan moderasi diskusi.</p></div>
+         <span class="soft-tag">Editor terverifikasi</span>
+        </div>
+        <div class="admin-tools-grid">
+         <form id="adminContestForm" class="form-card">
+          <h3>Terbitkan lomba baru</h3>
+          <p class="field-help">Pakai ini untuk lomba resmi Ruang Kata atau pengumuman yang sudah diperiksa dari Instagram.</p>
+          <label for="adminContestTitle">Nama lomba</label>
+          <input id="adminContestTitle" maxlength="120" required placeholder="Nama lomba menulis">
+          <label for="adminContestCategory">Kategori</label>
+          <input id="adminContestCategory" maxlength="60" required placeholder="Misalnya: Cerpen / Puisi / Novel mini">
+          <label for="adminContestDescription">Deskripsi</label>
+          <textarea id="adminContestDescription" rows="3" maxlength="1600" required placeholder="Ringkasan lomba dan persyaratan utama..."></textarea>
+          <label for="adminContestDeadline">Batas pengumpulan</label>
+          <input id="adminContestDeadline" type="date" required>
+          <label for="adminContestTheme">Tema lomba</label>
+          <input id="adminContestTheme" maxlength="160" required placeholder="Tema atau ketentuan utama">
+          <label for="adminContestFormat">Format karya</label>
+          <input id="adminContestFormat" maxlength="160" required placeholder="Misalnya: 1.000-3.000 kata">
+          <label for="adminContestInstagram">Tautan Instagram / pengumuman resmi (opsional)</label>
+          <input id="adminContestInstagram" type="url" placeholder="https://www.instagram.com/p/...">
+          <label for="adminContestPosterInput">Poster lomba (opsional)</label>
+          <input id="adminContestPosterInput" type="file" accept="image/*">
+          <div class="image-preview-box"><img id="adminContestPosterPreview" alt="Pratinjau poster lomba" hidden><span id="adminContestPosterPreviewText">Belum ada poster.</span></div>
+          <button class="button button-wide" type="submit">Terbitkan lomba</button>
+         </form>
+         <div class="admin-list-column">
+          <div class="form-card">
+           <h3>Usulan lomba dari pembaca</h3>
+           <p class="field-help">Periksa tautan, persyaratan, dan poster sebelum menerbitkan.</p>
+           <div id="contestSuggestionQueue" class="admin-item-list"></div>
+          </div>
+          <div class="form-card">
+           <h3>Lomba yang dikelola</h3>
+           <div id="managedContestList" class="admin-item-list"></div>
+          </div>
+          <div class="form-card">
+           <h3>Moderasi diskusi</h3>
+           <p class="field-help">Topik dapat disematkan atau dihapus jika melanggar aturan komunitas.</p>
+           <div id="managedTopicList" class="admin-item-list"></div>
+          </div>
+         </div>
+        </div>
+       </section>
+      </section>
+      <section class="page-section workspace-page" hidden id="publisherDirectory">
+       <div class="section-heading"><div><p class="eyebrow">JARINGAN PENERBIT</p><h2>Temukan penerbit</h2><p class="muted">Jelajahi penerbit mitra demo dan ajukan naskah tanpa berpindah-pindah website.</p></div></div>
+       <div class="prototype-note"><strong>Catatan prototipe:</strong> penerbit di sini adalah akun contoh. Penerimaan naskah dan balasan belum menjadi kontrak penerbitan.</div>
+       <div class="publisher-directory-grid" id="publisherDirectoryGrid"></div>
+       <div class="form-card publisher-submit-card" id="publisherSubmissionWrap" hidden>
+        <form id="publisherSubmissionForm">
+         <h3>Ajukan naskah ke penerbit</h3><p class="field-help">Isi naskah atau tempel versi yang siap dikirim. Pengajuan tersimpan di browser demo penerbit.</p>
+         <label for="publisherRecipientSelect">Tujuan penerbit</label><select id="publisherRecipientSelect" required></select>
+         <label for="publisherSubmissionTitle">Judul karya</label><input id="publisherSubmissionTitle" maxlength="120" required placeholder="Judul naskah" />
+         <label for="publisherSubmissionSynopsis">Sinopsis lengkap</label><textarea id="publisherSubmissionSynopsis" maxlength="20000" rows="6" required placeholder="Ceritakan inti cerita, tokoh, konflik, dan daya tarik utamanya"></textarea>
+         <small class="field-help">Kolom mendukung sinopsis panjang sampai 20.000 karakter, kira-kira 1.000 kata atau lebih.</small>
+         <label for="publisherSubmissionManuscript">Naskah lengkap</label><textarea id="publisherSubmissionManuscript" class="contest-manuscript" rows="12" required placeholder="Tempel atau tulis naskah lengkap di sini"></textarea>
+         <div class="field"><label for="publisherSubmissionCoverInput">Sampul (opsional, dari perangkat)</label><input id="publisherSubmissionCoverInput" type="file" accept="image/png,image/jpeg,image/webp"/><div class="image-preview-box"><img id="publisherSubmissionCoverPreview" alt="Pratinjau sampul naskah" hidden><span id="publisherSubmissionCoverPreviewText">Belum ada sampul.</span></div></div>
+         <div class="form-actions"><button class="button button-outline" id="cancelPublisherSubmission" type="button">Batal</button><button class="button" type="submit">Kirim ke penerbit</button></div>
+        </form>
+       </div>
+      </section>
+      <section class="page-section workspace-page" hidden id="messagesPage">
+       <div class="section-heading"><div><p class="eyebrow">RUANG PESAN</p><h2>Pesan & kolaborasi</h2><p class="muted">Percakapan dengan Penulis, Editor, dan Penerbit.</p></div></div>
+       <div class="prototype-note"><strong>Mode demo lokal:</strong> riwayat pesan tersimpan di browser ini. Pesan belum tersinkron antarperangkat dan belum realtime seperti layanan chat online.</div>
+       <div class="messages-layout">
+        <aside class="message-contacts">
+         <label for="messageContactSearch">Percakapan</label>
+         <input id="messageContactSearch" type="search" placeholder="Cari kontak..." autocomplete="off" />
+         <div id="messageContactList" class="message-contact-list" aria-label="Daftar percakapan"></div>
+         <select id="messageContactSelect" class="visually-hidden" aria-hidden="true" tabindex="-1"></select>
+         <div class="notification-settings">
+          <button class="button button-outline button-small" id="enableNotificationsButton" type="button">Aktifkan notifikasi</button>
+          <p id="messageNotificationStatus" class="field-help">Notifikasi pesan baru dapat diaktifkan dari browser.</p>
+         </div>
+        </aside>
+        <section class="message-conversation">
+         <header class="message-active-header" id="messageContactSummary"><p class="empty-state">Pilih kontak untuk memulai percakapan.</p></header>
+         <div class="message-thread" id="messageThread" aria-live="polite"><p class="empty-state">Pilih kontak untuk membuka percakapan.</p></div>
+         <form id="messageForm" class="message-compose">
+          <label for="messageBody">Tulis pesan</label>
+          <textarea id="messageBody" rows="3" maxlength="5000" placeholder="Tulis pesan..." ></textarea>
+          <div class="message-attachment-row">
+           <label class="button button-outline button-small message-attach-button" for="messageAttachmentInput">+ Lampirkan file</label>
+           <input id="messageAttachmentInput" class="visually-hidden" type="file" accept="image/*,video/*,.pdf,.doc,.docx,.txt,.rtf,.odt,.xls,.xlsx,.ppt,.pptx,.zip" />
+           <span id="messageAttachmentInfo" class="field-help">Gambar, video, atau dokumen. Maksimal 15 MB.</span>
+           <button class="text-button danger-text" id="clearMessageAttachment" type="button" hidden>Batalkan file</button>
+          </div>
+          <div class="form-actions"><button class="button" type="submit">Kirim pesan</button></div>
+         </form>
+        </section>
+       </div>
+      </section>
+      <section class="page-section publisher-panel" hidden id="publisherPanel">
+       <div class="section-heading"><div><p class="eyebrow">MEJA REDAKSI PENERBIT</p><h2>Naskah masuk</h2><p class="muted">Tinjau pengajuan penulis, beri status awal, dan hubungi penulis lewat Pesan.</p></div></div>
+       <div class="prototype-note"><strong>Mode demo lokal:</strong> pengajuan masuk hanya terbaca di browser yang sama. Untuk operasional nyata, data harus disimpan di server/database bersama.</div>
+       <div id="publisherIncomingList" class="publisher-incoming-list"></div>
+      </section>
+      <footer class="page-footer">
+       <a class="brand" href="#beranda">
+        Ruang Kata
+        <span>
+         .
+        </span>
+       </a>
+       <p>
+        Temukan cerita. Temukan duniamu.
+       </p>
+       <small>
+        &copy;
+        <span id="year">
+        </span>
+        Ruang Kata &middot; Prototipe komunitas literasi
+       </small>
+      </footer>
+     </main>
+     <aside class="right-sidebar">
+      <div class="right-card profile-card">
+       <p class="eyebrow">
+        RUANGMU HARI INI
+       </p>
+       <h3 id="rightGreeting">
+        Selamat datang, pembaca.
+       </h3>
+       <p class="muted small">
+        Baca satu halaman, tulis satu paragraf, atau temukan teman berdiskusi.
+       </p>
+       <a class="button button-wide" href="#studio">
+        Buka Writing Studio
+       </a>
+      </div>
+      <div class="right-card">
+       <div class="right-card-heading">
+        <h3>
+         Komunitas aktif
+        </h3>
+        <a href="#forum">
+         Lihat
+        </a>
+       </div>
+       <div class="right-community-list" id="rightCommunityList">
+       </div>
+      </div>
+      <div class="right-card workflow-card">
+       <p class="eyebrow">ALUR KARYA</p>
+       <h3>Dari draf sampai terbit</h3>
+       <ol class="workflow-list">
+        <li><strong>Tulis</strong><small>Mulai di Tulis &amp; Koreksi.</small></li>
+        <li><strong>Kirim ke Editor</strong><small>Pantau statusnya di Karyaku.</small></li>
+        <li><strong>Disetujui</strong><small>Karya muncul di Jelajahi Cerita.</small></li>
+       </ol>
+       <a class="inline-link" href="#myWorksSection">Buka Karyaku →</a>
+      </div>
+      <div class="right-card contest-mini">
+       <p class="eyebrow">
+        PANGGUNG KARYA
+       </p>
+       <h3>
+        Berani ikut tantangan?
+       </h3>
+       <p class="muted small">
+        Lihat lomba menulis dan ubah ide yang tertunda menjadi karya.
+       </p>
+       <a class="inline-link" href="#lomba">
+        Jelajahi lomba &rarr;
+       </a>
+      </div>
+      <div class="right-card note-card">
+       <p class="eyebrow">
+        CATATAN RUANG KATA
+       </p>
+       <p class="right-quote">
+        &ldquo;Tulisan yang baik bukan selalu yang sempurna, melainkan yang terus diperbaiki.&rdquo;
+       </p>
+       <small>
+        Ruang Kata
+       </small>
+      </div>
+      <p class="local-note">
+       Mode prototipe &middot; data tersimpan di browser ini
+      </p>
+     </aside>
+    </div>
+   </div>
+  </div>
+  <!-- Halaman membaca khusus -->
+  <section aria-label="Halaman membaca novel" class="reading-page" hidden="" id="readingPage">
+   <header class="reader-topbar">
+    <button class="reader-back-button" id="readerBackButton" type="button">
+     &larr;
+     <span>
+      Kembali ke katalog
+     </span>
+    </button>
+    <a class="brand" href="#beranda">
+     Ruang Kata
+     <span>
+      .
+     </span>
+    </a>
+    <span class="reader-mode-label">
+     MODE MEMBACA
+    </span>
+   </header>
+   <main class="reader-shell">
+    <div class="reader-book-intro">
+     <img alt="Sampul novel" class="reader-book-cover" id="readerCover"/>
+     <div>
+      <p class="eyebrow" id="readerGenre">
+       NOVEL
+      </p>
+      <h1 class="reader-book-title" id="readerTitle">
+      </h1>
+      <p class="reader-book-author" id="readerAuthor">
+      </p>
+      <p class="reader-synopsis" id="readerSynopsis">
+      </p>
+     </div>
+    </div>
+    <div class="reader-controls">
+     <label for="readerChapterSelect">
+      Pilih bab
+     </label>
+     <select id="readerChapterSelect">
+     </select>
+     <span class="reader-progress" id="readerProgress">
+     </span>
+    </div>
+    <article class="reader-story">
+     <p class="eyebrow" id="readerChapterNumber">
+     </p>
+     <h2 id="readerChapterTitle">
+     </h2>
+     <p class="reader-hint">
+      Pilih kata atau kalimat untuk mengomentari kutipan. Komentar paragraf bisa dibuka saat kamu ingin membacanya.
+     </p>
+     <div class="reader-content" id="readerContent">
+     </div>
+     <div class="selection-action-area" hidden="" id="selectionActionArea">
+      <p>
+       Bagian yang kamu pilih:
+      </p>
+      <blockquote id="selectedQuotePreview">
+      </blockquote>
+      <button class="button button-outline button-small" id="commentSelectedTextButton" type="button">
+       Komentari kutipan ini
+      </button>
+     </div>
+     <div class="reader-chapter-nav">
+      <button class="button button-outline" id="previousChapter" type="button">
+       &larr; Bab sebelumnya
+      </button>
+      <button class="button" id="nextChapter" type="button">
+       Bab berikutnya &rarr;
+      </button>
+     </div>
+    </article>
+    <section class="reader-discussion" id="readerDiscussion">
+     <p class="eyebrow">
+      KOMUNITAS PEMBACA
+     </p>
+     <h2>
+      Diskusi Pembaca
+     </h2>
+     <p class="muted">
+      Diskusi umum untuk keseluruhan novel.
+     </p>
+     <button class="button button-outline" id="generalCommentButton" type="button">
+      ＋ Komentar tentang novel
+     </button>
+     <div class="comment-composer" hidden="" id="commentComposer">
+      <p class="comment-target-label" id="commentTargetLabel">
+       Komentar tentang novel
+      </p>
+      <blockquote class="comment-quote" hidden="" id="commentQuote">
+      </blockquote>
+      <form id="commentForm">
+       <label for="readerName">
+        Nama tampilan
+       </label>
+       <input id="readerName" maxlength="40" placeholder="Nama pembaca" required=""/>
+       <label for="commentText">
+        Komentar
+       </label>
+       <textarea id="commentText" maxlength="1200" placeholder="Tulis komentarmu dengan sopan..." required="" rows="3"></textarea>
+       <div class="form-actions">
+        <button class="button button-outline" id="cancelCommentButton" type="button">
+         Batal
+        </button>
+        <button class="button" type="submit">
+         Kirim komentar
+        </button>
+       </div>
+      </form>
+     </div>
+     <div class="novel-comments" id="novelComments">
+     </div>
+    </section>
+   </main>
+  </section>
+  <dialog class="login-dialog" id="loginDialog">
+   <button aria-label="Tutup" class="dialog-close" id="loginClose" type="button">
+   </button>
+   <p class="eyebrow">
+    SELAMAT DATANG
+   </p>
+   <h2>
+    Masuk ke Ruang Kata
+   </h2>
+   <p class="muted small">
+    Pilih peran untuk membuka workspace yang sesuai. Akun di bawah hanya untuk demonstrasi fitur.
+   </p>
+   <form id="loginForm">
+    <label for="loginRole">
+     Masuk sebagai
+    </label>
+    <select id="loginRole">
+     <option value="writer">
+      Penulis
+     </option>
+     <option value="editor">Editor</option>
+     <option value="publisher">Penerbit</option>
+    </select>
+    <div class="login-eligibility" id="editorEligibilityPreview" hidden>
+     <p class="eyebrow">SYARAT EDITOR</p><h3>Minimal 4 karya sudah terbit</h3>
+     <p class="small muted">Portofolio akun Editor Demo ditampilkan sebelum masuk. Dalam penggunaan nyata, judul, sampul, penerbit, dan tahun terbit harus diverifikasi manusia; data berikut hanya contoh demo.</p>
+     <p class="portfolio-count" id="editorPortfolioCount"></p><div class="editor-portfolio-grid" id="editorPortfolioGrid"></div>
+    </div>
+    <div class="login-eligibility" id="publisherRolePreview" hidden>
+     <p class="eyebrow">AKUN PENERBIT</p><h3>Kelola pengajuan naskah</h3><p class="small muted">Tinjau karya masuk, berikan status, lalu hubungi penulis melalui ruang pesan.</p>
+    </div>
+    <label for="email">
+     Email
+    </label>
+    <input id="email" placeholder="nama@email.com" required="" type="email"/>
+    <label for="password">
+     Kata sandi
+    </label>
+    <input id="password" placeholder="Kata sandi" required="" type="password"/>
+    <button class="button button-wide" type="submit">
+     Masuk
+    </button>
+    <p aria-live="polite" class="form-message" id="loginMessage">
+    </p>
+   </form>
+   <p class="login-flow-note">Penulis: buat karya → kirim ke editor → pantau statusnya di <strong>Karyaku</strong>. Editor: tampilkan portofolio minimal 4 buku terbit; akun demo menunjukkan contoh syarat dan membuka alat moderasi.</p>
+   <div class="demo-accounts">
+    <p><strong>Demo Penulis</strong><br/>penulis@ruangkata.test<br/>tulis123</p>
+    <p><strong>Demo Editor (portofolio contoh)</strong><br/>editor@ruangkata.test<br/>edit123</p>
+    <p><strong>Demo Penerbit</strong><br/>penerbit@ruangkata.test<br/>terbit123</p>
+   </div>
+  </dialog>
+ 
+  <dialog class="login-dialog profile-dialog" id="profileDialog">
+   <button aria-label="Tutup" class="dialog-close" id="profileClose" type="button"></button>
+   <p class="eyebrow">PROFIL RUANG KATA</p>
+   <h2>Atur nama dan foto</h2>
+   <p class="muted small">Nama dan foto ini dipakai pada sidebar dan pesan. Perubahan tersimpan untuk akun demo yang sedang aktif.</p>
+   <form id="profileForm">
+    <label for="profileDisplayName">Nama tampilan</label>
+    <input id="profileDisplayName" maxlength="40" required placeholder="Nama yang akan dilihat orang lain" />
+    <label for="profileInstagram">Instagram (opsional)</label>
+    <input id="profileInstagram" type="url" placeholder="https://instagram.com/username" />
+    <label for="profileLinkedIn">LinkedIn (opsional)</label>
+    <input id="profileLinkedIn" type="url" placeholder="https://linkedin.com/in/username" />
+    <label for="profileWattpad">Wattpad (opsional)</label>
+    <input id="profileWattpad" type="url" placeholder="https://www.wattpad.com/user/username" />
+    <label for="profilePinterest">Pinterest (opsional)</label>
+    <input id="profilePinterest" type="url" placeholder="https://www.pinterest.com/username/" />
+    <label for="profileX">X (Twitter) (opsional)</label>
+    <input id="profileX" type="url" placeholder="https://x.com/username" />
+    <label for="profileStory">Story / status singkat</label>
+    <textarea id="profileStory" rows="2" maxlength="180" placeholder="Sedang menulis cerita baru... (maks. 180 karakter)"></textarea>
+    <small class="field-help">Tautan dan story akan tampil di kartu kontakmu. Gunakan tautan profil publik.</small>
+    <label for="profileAvatarInput">Foto profil dari perangkat</label>
+    <input id="profileAvatarInput" type="file" accept="image/png,image/jpeg,image/webp" />
+    <div class="profile-avatar-preview"><span class="avatar" id="profileAvatarPreviewInitials">RK</span><img id="profileAvatarPreviewImage" alt="Pratinjau foto profil" hidden /></div>
+    <small class="field-help">Gunakan JPG, PNG, atau WebP. Ukuran maksimal 8 MB sebelum diperkecil.</small>
+    <div class="profile-form-actions">
+     <button class="button button-outline" id="removeProfilePhoto" type="button">Hapus foto</button>
+     <button class="button button-outline" id="cancelProfileEdit" type="button">Batal</button>
+     <button class="button" type="submit">Simpan profil</button>
+    </div>
+    <p class="form-message" id="profileMessage" aria-live="polite"></p>
+   </form>
+  </dialog>
+
+ 
+
+  <dialog class="contact-profile-dialog" id="contactProfileDialog" aria-labelledby="contactProfileName">
+   <button aria-label="Tutup profil kontak" class="dialog-close" id="contactProfileClose" type="button"></button>
+   <div class="contact-profile-hero">
+    <span class="contact-profile-avatar avatar" id="contactProfileAvatar">RK</span>
+    <p class="eyebrow">PROFIL KONTAK RUANG KATA</p>
+    <h2 id="contactProfileName">Nama kontak</h2>
+    <p class="muted small" id="contactProfileRole">Peran</p>
+    <p id="contactProfileStory" class="contact-profile-story" hidden></p>
+   </div>
+   <section class="contact-profile-social-section">
+    <p class="eyebrow">TEMUKAN DI MEDIA SOSIAL</p>
+    <div id="contactProfileSocials" class="contact-profile-socials"></div>
+    <p class="field-help" id="contactProfileEmpty">Kontak ini belum menambahkan tautan sosial.</p>
+   </section>
+   <button class="button button-outline button-wide" id="contactProfileDone" type="button">Kembali ke pesan</button>
+  </dialog>
+
+ </body>
+</html>
